@@ -75,4 +75,7 @@ def run(t):
 
 
 if __name__ == "__main__":
+    if sys.argv[1:2] == ["--discover"]:
+        from route_resources import main as discover_main
+        raise SystemExit(discover_main(sys.argv[2:]))
     run(" ".join(sys.argv[1:]) or "analiza D_f")
